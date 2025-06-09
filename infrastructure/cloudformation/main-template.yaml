@@ -13,10 +13,6 @@ Parameters:
   TemplateBucket:
     Type: String
     Description: S3 bucket containing CloudFormation templates
-    
-  TemplateVersion:
-    Type: String
-    Description: Version timestamp for template URLs
 
   VpcId:
     Type: AWS::EC2::VPC::Id
