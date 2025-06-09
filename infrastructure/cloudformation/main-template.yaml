@@ -21,18 +21,18 @@ Parameters:
     Default: subnet-02615277a84a5fcb4
     Description: List of existing subnet IDs for deployment
 
-Resources:
-  # Security Groups Stack
-  SecurityGroupsStack:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      TemplateURL: ./templates/security-groups.yaml
-      Parameters:
-        Environment: !Ref Environment
-        VpcId: !Ref VpcId
-      Tags:
-        - Key: Environment
-          Value: !Ref Environment
+# Resources:
+#   # Security Groups Stack
+#   SecurityGroupsStack:
+#     Type: AWS::CloudFormation::Stack
+#     Properties:
+#       TemplateURL: ./templates/security-groups.yaml
+#       Parameters:
+#         Environment: !Ref Environment
+#         VpcId: !Ref VpcId
+#       Tags:
+#         - Key: Environment
+#           Value: !Ref Environment
 
   # Add more nested stacks as needed
 
