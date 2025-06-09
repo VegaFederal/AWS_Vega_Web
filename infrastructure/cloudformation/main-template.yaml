@@ -45,19 +45,20 @@ Resources:
 
   # Add more nested stacks as needed
   # Static Website Stack
-  # StaticWebsiteStack:
-  #   Type: AWS::CloudFormation::Stack
-  #   Properties:
-  #     TemplateURL: ./templates/static-website.yaml
-  #     Parameters:
-  #       ProjectName: !Ref AWS::StackName
-  #       Environment: !Ref Environment
-  #     Tags:
-  #       - Key: Environment
-  #         Value: !Ref Environment
+ Resources:
+  WebsiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      TemplateURL: ./templates/static-website.yaml
+      Parameters:
+        ProjectName: !Ref AWS::StackName
+        Environment: !Ref Environment
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
 # Outputs:
   # Your outputs will go here
-  # Outputs:
-  #   WebsiteBucketName:
-  #     Description: S3 Bucket for website content
-  #     Value: !GetAtt StaticWebsiteStack.Outputs.WebsiteBucketName
+  Outputs:
+    WebsiteBucketName:
+      Description: S3 Bucket for website content
+      Value: !GetAtt StaticWebsiteStack.Outputs.WebsiteBucketName
