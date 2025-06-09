@@ -57,7 +57,7 @@ Resources:
   #         Value: !Ref Environment
 # Outputs:
   # Your outputs will go here
-  # Outputs:
-  #   WebsiteBucketName:
-  #     Description: S3 Bucket for website content
-  #     Value: !GetAtt StaticWebsiteStack.Outputs.WebsiteBucketName
+  Outputs:
+    WebsiteBucketName:
+      Description: S3 Bucket for website content
+      Value: !GetAtt StaticWebsiteStack.Outputs.WebsiteBucketName
