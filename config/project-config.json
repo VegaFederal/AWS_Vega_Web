@@ -1,0 +1,11 @@
+{
+  "projectName": "AWS_Vega_Web",
+  "description": "vega website deploy",
+  "infraType": "cloudformation",
+  "applicationType": "serverless",
+  "awsRegion": "us-east-1",
+  "vpcId": "vpc-03de7ad5a4c7c1822",
+  "subnetIds": "subnet-02615277a84a5fcb4",
+  "githubRepo": "https://github.com/VegaFederal/AWS_Vega_Web",
+  "createdAt": "2025-06-05T21:14:33Z"
+}
