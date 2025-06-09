@@ -10,7 +10,14 @@ Parameters:
       - test
       - prod
     Description: The deployment environment
-  
+  TemplateBucket:
+    Type: String
+    Description: S3 bucket containing CloudFormation templates
+    
+  TemplateVersion:
+    Type: String
+    Description: Version timestamp for template URLs
+
   VpcId:
     Type: AWS::EC2::VPC::Id
     Default: vpc-03de7ad5a4c7c1822
@@ -18,8 +25,13 @@ Parameters:
   
   SubnetIds:
     Type: List<AWS::EC2::Subnet::Id>
-    Default: subnet-02615277a84a5fcb4
+    Default: subnet-02615277a84a5fcb4,subnet-005d1ad197eb59c2b
     Description: List of existing subnet IDs for deployment
+    
+  DocumentsBucketName:
+    Type: String
+    Default: aiad-docs
+    Description: Base name for the S3 bucket that will store documents
 
 Resources:
   # Security Groups Stack
