@@ -82,11 +82,10 @@ jobs:
           name: ${{ env.PROJECT_NAME }}
           template: infrastructure/cloudformation/main-template.yaml #main.yml isn't in infrastructure
           parameter-overrides: >-
-            ProjectName=${{ env.PROJECT_NAME }},
             Environment=dev,
             VpcId=${{ env.VPC_ID }},
             SubnetIds=${{ env.SUBNET_IDS }},
-            TemplateBucket=${{ env.TEMPLATE_BUCKET }},
+            TemplateBucket=${{ env.TEMPLATE_BUCKET }}
           no-fail-on-empty-changeset: "1"
           capabilities: "CAPABILITY_NAMED_IAM"
 
