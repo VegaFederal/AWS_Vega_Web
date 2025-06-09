@@ -10,7 +10,7 @@ Parameters:
       - test
       - prod
     Description: The deployment environment
-    
+
   TemplateBucket:
     Type: String
     Description: S3 bucket containing CloudFormation templates
@@ -45,5 +45,5 @@ Resources:
 
   # Add more nested stacks as needed
 
-Outputs:
+# Outputs:
   # Your outputs will go here
