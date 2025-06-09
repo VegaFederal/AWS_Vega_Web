@@ -66,8 +66,8 @@ jobs:
             echo "Creating bucket: $TEMPLATE_BUCKET"
             aws s3 mb s3://$TEMPLATE_BUCKET
 
-      # - name: Upload templates to S3
-      #   run: aws s3 sync infrastructure/cloudformation/templates/ s3://$TEMPLATE_BUCKET/templates/
+      - name: Upload templates to S3
+        run: aws s3 sync infrastructure/cloudformation/templates/ s3://$TEMPLATE_BUCKET/templates/
       # - name: Create Lambda deployment package
       #   run: |
       #     cd src/website
@@ -87,7 +87,6 @@ jobs:
             VpcId=${{ env.VPC_ID }},
             SubnetIds=${{ env.SUBNET_IDS }},
             TemplateBucket=${{ env.TEMPLATE_BUCKET }},
-            AiModelId=${{ env.AI_MODEL }}
           no-fail-on-empty-changeset: "1"
           capabilities: "CAPABILITY_NAMED_IAM"
 
