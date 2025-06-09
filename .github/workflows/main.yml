@@ -49,12 +49,10 @@ jobs:
           PROJECT_NAME=$(jq -r '.projectName' $CONFIG_FILE)
           VPC_ID=$(jq -r '.vpcId' $CONFIG_FILE)
           SUBNET_IDS=$(jq -r '.subnetIds' $CONFIG_FILE)
-          AI_MODEL=$(jq -r '.aiModel' $CONFIG_FILE)
 
           echo "PROJECT_NAME=$PROJECT_NAME" >> $GITHUB_ENV
           echo "VPC_ID=$VPC_ID" >> $GITHUB_ENV
           echo "SUBNET_IDS=$SUBNET_IDS" >> $GITHUB_ENV
-          echo "AI_MODEL=$AI_MODEL" >> $GITHUB_ENV
       - name: Create template bucket
         run: |
             TIMESTAMP=$(date +%s)
