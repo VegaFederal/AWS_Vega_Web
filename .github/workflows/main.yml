@@ -70,7 +70,7 @@ jobs:
         run: aws s3 sync infrastructure/cloudformation/templates/ s3://$TEMPLATE_BUCKET/templates/
       - name: Create Lambda deployment package
         run: |
-          cd src/lambda
+          cd src/website
           zip -r lambdaAiHandler.zip lambdaAiHandler.py
           PROJECT_NAME_LOWER=$(echo "$PROJECT_NAME" | tr '[:upper:]' '[:lower:]')
           aws s3 mb s3://${PROJECT_NAME_LOWER}-dev-deployment || true
