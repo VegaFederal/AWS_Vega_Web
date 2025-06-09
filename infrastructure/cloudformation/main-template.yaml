@@ -45,7 +45,6 @@ Resources:
 
   # Add more nested stacks as needed
   # Static Website Stack
- Resources:
   WebsiteBucket:
     Type: AWS::S3::Bucket
     Properties:
