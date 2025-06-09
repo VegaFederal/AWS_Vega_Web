@@ -1,5 +1,5 @@
 {
-  "projectName": "AWS_Vega_Web",
+  "projectName": "awsVegaWeb",
   "description": "vega website deploy",
   "infraType": "cloudformation",
   "applicationType": "serverless",

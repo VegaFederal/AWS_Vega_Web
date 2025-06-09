@@ -12,21 +12,21 @@ provider:
       - !Ref ServerlessSecurityGroup
     subnetIds:       - subnet-02615277a84a5fcb4
 
-# functions:
-#   hello:
-#     handler: src/lambda/hello.handler
-#     events:
-#       - httpApi:
-#           path: /hello
-#           method: get
-
 functions:
   hello:
-    handler: src/my-react-site
+    handler: src/lambda/hello.handler
     events:
       - httpApi:
           path: /hello
           method: get
+
+# functions:
+#   hello:
+#     handler: src/my-react-site
+#     events:
+#       - httpApi:
+#           path: /hello
+#           method: get
 
 resources:
   Resources:
