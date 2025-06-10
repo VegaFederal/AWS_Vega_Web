@@ -69,18 +69,29 @@ Resources:
   #       Comment: !Sub ${AWS::StackName} OAI
 
   # Bucket Policy for CloudFront access
+  # WebsiteBucketPolicy:
+  #   Type: AWS::S3::BucketPolicy
+  #   Properties:
+  #     Bucket: !Ref WebsiteBucket
+  #     PolicyDocument:
+  #       Statement:
+  #         - Action:
+  #             - s3:GetObject
+  #           Effect: Allow
+  #           Resource: !Sub ${WebsiteBucket.Arn}/*
+  #           Principal:
+  #             CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId
   WebsiteBucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
       Bucket: !Ref WebsiteBucket
       PolicyDocument:
+        Version: '2012-10-17'
         Statement:
-          - Action:
-              - s3:GetObject
-            Effect: Allow
+          - Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
             Resource: !Sub ${WebsiteBucket.Arn}/*
-            Principal:
-              CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId
 
 Outputs:
   WebsiteBucketName:
