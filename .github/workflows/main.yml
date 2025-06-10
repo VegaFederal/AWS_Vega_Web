@@ -80,6 +80,7 @@ jobs:
           name: ${{ env.PROJECT_NAME }}
           template: infrastructure/cloudformation/main-template.yaml #main.yml isn't in infrastructure
           parameter-overrides: >-
+            ProjectName=${{ env.PROJECT_NAME }}
             Environment=dev,
             VpcId=${{ env.VPC_ID }},
             SubnetIds=${{ env.SUBNET_IDS }},

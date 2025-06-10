@@ -11,6 +11,9 @@ Parameters:
       - prod
     Description: The deployment environment
 
+  ProjectName:
+      Type: String
+      Description: "Logical name/prefix for resources"
 
   TemplateBucket:
     Type: String
