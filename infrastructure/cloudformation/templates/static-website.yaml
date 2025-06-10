@@ -10,6 +10,9 @@ Parameters:
       - test
       - prod
     Description: The deployment environment
+  ProjectName:
+    Type: String
+    Description: "Logical name/prefix for resources"
 
 Resources:
   # S3 Bucket for static assets
@@ -25,7 +28,7 @@ Resources:
         Status: Enabled
       Tags:
         - Key: Name
-          Value: !Sub ${AWS::StackName}-website-bucket
+          Value: !Sub ${ProjectName}-website-bucket
         - Key: Environment
           Value: !Ref Environment
 

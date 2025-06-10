@@ -55,7 +55,7 @@ Resources:
     Properties:
       TemplateURL: !Sub https://${TemplateBucket}.s3.amazonaws.com/templates/static-website.yaml
       Parameters:
-        ProjectName: !Ref AWS::StackName
+        ProjectName: !Ref ProjectName
         Environment: !Ref Environment
       Tags:
         - Key: Environment
