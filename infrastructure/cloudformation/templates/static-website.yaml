@@ -98,6 +98,6 @@ Outputs:
     Description: S3 Bucket for website content
     Value: !Ref WebsiteBucket
 
-  CloudFrontDistributionDomainName:
-    Description: CloudFront Distribution Domain Name
-    Value: !GetAtt CloudFrontDistribution.DomainName
+  # CloudFrontDistributionDomainName:
+  #   Description: CloudFront Distribution Domain Name
+  #   Value: !GetAtt CloudFrontDistribution.DomainName
